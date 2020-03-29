@@ -1,14 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def home(request):
 	if request.method == "GET":
-		msg = "YEAH !! A user just opened your website"
-		print(msg)
+		extra_data = ["SomeExtraData", 123, 1.1]
+		if "password" in request.GET.keys():
+			if request.GET['password'] == "supersecretpassword":
+				return render(request, "home.html", {'username': "priyam", 'abcd': extra_data})
+			else:
+				return render(request, "home.html", {'username': "wrong", 'abcd': extra_data})
+		else:
+			return render(request, "home.html", {'abcd': extra_data, 'username': "unknown"})
+
 	elif request.method == "POST":
-		msg = "YEAH !! A user just sent some data to your website"
-		print(msg)
+		print("POST parameters: "+str(request.POST))
+		return redirect("/homepage/")
+
 	else:
 		msg = "not suppported method"
-		print(msg)
-	return HttpResponse(msg)
+		return HttpResponse(msg)

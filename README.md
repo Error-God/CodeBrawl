@@ -15,6 +15,8 @@
 - urls.py
 - views.py
 - models.py
+- whenever we change models.py we have to "python manage.py makemigrations"
+- and then "python manage.py migrate"
 - admin.py
 - ... etc
 
