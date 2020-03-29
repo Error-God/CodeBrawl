@@ -6,12 +6,12 @@
 
 - django-admin startproject cbwebsite
 - python3 manage.py startapp quiz
-- python3 manage.py runserver
+- python3 manage.py runserver (developement mode)
 - manage.py
 - settings.py
 - settings.py INSTALLED_APPS
 - settings.py DATABASES
-- HTTP methods GET POST
+- HTTP methods (GET, POST)
 - urls.py
 - views.py
 - models.py
