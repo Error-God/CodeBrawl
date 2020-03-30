@@ -13,7 +13,7 @@ def home(request):
 			return render(request, "home.html", {'abcd': extra_data, 'username': "unknown"})
 
 	elif request.method == "POST":
-		print("POST parameters: "+str(request.POST))
+		print("POST parameters: " + str(request.POST))
 		return redirect("/homepage/")
 
 	else:
